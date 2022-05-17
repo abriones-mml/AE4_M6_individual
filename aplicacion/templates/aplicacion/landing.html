@@ -1,0 +1,26 @@
+{% extends 'base_layout.html' %}
+
+
+{% block content %}
+
+<!-- Promo -->
+<div class="row">
+  <div class="col-sm-6 p-3 bg-light text-dark">
+    <img class="img-fluid" src="https://cutt.ly/jGAOAod" alt="Circuito" width="520" height="300">
+  </div>
+  <div class="col-sm-6 p-3 bg-light text-dark">
+    <h2>Queremos entregarte no solo el conocimiento, sino también, nuestra pasión por la ELECTRÓNICA!</h2>
+    <p>Completa tus datos y te enviaremos detalles de nuestros cursos</p>
+    <input type="text" class="form-control" placeholder="Tu Nombre" readonly>
+    <br>
+    <input type="text" class="form-control" placeholder="Tu E-Mail" readonly>
+    <br>
+    <div class="form-floating">
+      <textarea class="form-control" id="comment" name="text" placeholder="Comentario"></textarea>
+      <label for="comment">Comentario</label>
+    </div>
+    <button type="button" class="btn btn-warning">Enviar</button>
+  </div>
+</div>
+
+{% endblock content %}
