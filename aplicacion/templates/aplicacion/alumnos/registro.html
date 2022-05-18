@@ -1,0 +1,21 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+<!-- <div class="bg-light container w-75 mt-1 shadow text-center"> -->
+<div class="col-12 col-md-6 offset-md-3">  
+    <div class="card">
+        <div class="card-body rounded">
+            <h2 class="fw-bold mt-3 text-center">Ingreso de Alumnos</h2>
+            <form action = "" method = "POST">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <div class="d-flex justify-content-center">
+                    <input class="btn btn-primary mt-3 mb-3" type = "submit" value="Registrar">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

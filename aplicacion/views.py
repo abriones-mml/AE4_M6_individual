@@ -8,15 +8,12 @@ def index(request):
 
 def alumnos(request):
     datos_alumnos = Alumno.objects.all() #.values?
-    return render(request, "aplicacion/alumnos.html", {'context': datos_alumnos})
+    return render(request, "aplicacion/alumnos/listado.html", {'context': datos_alumnos})
 
-def ingreso(request):
-    
-    form = AlumnoForm()  # linea reculeá faltaba xD
-    
+def registro_alumno(request):
+    form = AlumnoForm()
     if request.method == 'POST':
         form = AlumnoForm(request.POST)
-        
         if form.is_valid():
             alumno = Alumno()
             alumno.nombre = form.cleaned_data["nombre"]
@@ -26,8 +23,4 @@ def ingreso(request):
             alumno.ciudad = form.cleaned_data["ciudad"]
             alumno.pais = form.cleaned_data["pais"]
             alumno.save()
-            
-        else:
-            print("Chupala x2")
-        
-    return render(request, "aplicacion/ingreso.html", {"form": form})
+    return render(request, "aplicacion/alumnos/registro.html", {"form": form})
